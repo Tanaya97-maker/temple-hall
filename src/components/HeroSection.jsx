@@ -24,7 +24,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-[calc(100vh-16px)] lg:min-h-screen m-[8px] rounded-2xl lg:rounded-none lg:m-0 flex items-center justify-center overflow-hidden bg-black"
+      className="relative h-[100dvh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Background Images Carousel */}
       {backgroundImages.map((src, index) => (
@@ -41,18 +41,18 @@ export default function HeroSection() {
         </div>
       ))}
 
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] mb-6">
-          Perfect Venue for<br />
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto ">
+        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] mb-4 lg:mb-6">
+          Perfect Venue<br />for<br />
           <em className="not-italic text-[#D4A017]">Sacred & Grand Celebrations</em><br />
         </h1>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <img src="/logo.webp" alt="Logo" className="h-40 w-auto object-contain rounded-sm" />
+          <img src="/logo.webp" alt="Logo" className="h-32 lg:h-40 w-auto object-contain rounded-sm" />
         </div>
 
         {/* Stats bar */}
-        <div className="mt-4 grid grid-cols-3 gap-4 max-w-lg mx-auto pt-8">
+        <div className="mt-2 lg:mt-4 grid grid-cols-3 gap-4 max-w-lg mx-auto pt-4 lg:pt-8">
           {[
             { value: 'AC &', label: ' NON-AC Halls' },
             { value: '3000', label: 'Guest Capacity' },
