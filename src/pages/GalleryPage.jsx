@@ -1,4 +1,5 @@
 import SectionHeading from '../components/SectionHeading';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 const placeholders = Array.from({ length: 27 }, (_, i) => ({
   id: i + 1,
@@ -13,6 +14,7 @@ const placeholders = Array.from({ length: 27 }, (_, i) => ({
 }));
 
 export default function GalleryPage() {
+  useScrollReveal();
 
   return (
     <main className="pt-24 pb-20 min-h-screen bg-white">
@@ -29,7 +31,7 @@ export default function GalleryPage() {
           {placeholders.map((item) => (
             <div
               key={item.id}
-              className="break-inside-avoid bg-[#FFF4C2] overflow-hidden group relative cursor-pointer border border-transparent hover:border-[#D4A017] transition-all duration-300"
+              className="break-inside-avoid bg-[#FFF4C2] overflow-hidden group relative cursor-pointer border border-transparent hover:border-[#D4A017] transition-all duration-300 reveal"
             >
               <div className={`${item.aspect} w-full flex items-center justify-center bg-[#FFF4C2] relative`}>
                 {/* Real Image */}

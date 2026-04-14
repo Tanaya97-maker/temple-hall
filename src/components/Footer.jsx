@@ -69,11 +69,16 @@ export default function Footer() {
             <h4 className="font-accent text-xs tracking-widest uppercase text-[#D4A017] mb-4">
               Location
             </h4>
-            <address className="not-italic text-gray-400 text-sm font-body leading-relaxed">
+            <a
+              href="https://maps.app.goo.gl/FRHo8eqdSQhqmWKk7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="not-italic text-gray-400 text-sm font-body leading-relaxed hover:text-[#FFF4C2] transition-colors"
+            >
               Shree Shantadurga Sangodkarin Sabhagruha A/c Hall<br />
               Sangolda, North Goa<br />
               Goa, India - 403501
-            </address>
+            </a>
           </div>
 
           {/* Contact */}

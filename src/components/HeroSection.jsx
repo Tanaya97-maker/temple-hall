@@ -24,7 +24,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      className="relative min-h-[calc(100vh-16px)] lg:min-h-screen m-[8px] rounded-2xl lg:rounded-none lg:m-0 flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Background Images Carousel */}
       {backgroundImages.map((src, index) => (

@@ -4,18 +4,21 @@ import CelebrationsSection from '../components/CelebrationsSection';
 import TestimonialsSection from '../components/TestimonialsSection';
 import ServicesSection from '../components/ServicesSection';
 import { Link } from 'react-router-dom';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 export default function HomePage() {
+  useScrollReveal();
+
   return (
     <main>
-      <HeroSection />
-      <AboutSection />
-      <CelebrationsSection />
-      <ServicesSection />
-      <TestimonialsSection />
+      <div className="reveal"><HeroSection /></div>
+      <div className="reveal"><AboutSection /></div>
+      <div className="reveal"><CelebrationsSection /></div>
+      <div className="reveal"><ServicesSection /></div>
+      <div className="reveal"><TestimonialsSection /></div>
 
       {/* CTA Banner */}
-      <section className="bg-[#FFF4C2] py-10 text-center">
+      <section className="bg-[#FFF4C2] py-10 text-center reveal">
         <div className="max-w-2xl mx-auto px-4">
           <p className="font-accent text-[10px] tracking-[0.3em] uppercase text-[#B8860B] mb-4">
             Begin Your Journey

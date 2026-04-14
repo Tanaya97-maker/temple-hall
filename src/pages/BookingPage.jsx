@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
+import useScrollReveal from '../hooks/useScrollReveal';
 
 // ---- Replace with your deployed Google Apps Script Web App URL ----
 const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyoO_-D5d4X-xodhYxRxFvZljMCDx_-KWXlLkSE2t9MwG_NENpRLnmRlpEaqLH9ANow/exec';
@@ -16,6 +17,7 @@ const eventTypes = [
 ];
 
 export default function BookingPage() {
+  useScrollReveal();
   const [form, setForm] = useState({
     name: '',
     phone: '',
@@ -64,7 +66,7 @@ export default function BookingPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Form */}
-          <div className="bg-white border-2 border-[#FFF4C2] p-8">
+          <div className="bg-white border-2 border-[#FFF4C2] p-8 reveal">
             <h3 className="font-accent text-sm tracking-widest uppercase text-[#B8860B] mb-6">
               Enquiry / Booking Form
             </h3>
@@ -191,7 +193,7 @@ export default function BookingPage() {
           {/* Right Panel: Pricing + Contact */}
           <div className="flex flex-col gap-6">
             {/* Fee Breakdown */}
-            <div className="bg-black text-white p-8">
+            <div className="bg-black text-white p-8 reveal">
               <h3 className="font-accent text-xs tracking-[0.25em] uppercase text-[#D4A017] mb-6">
                 Fee Breakdown
               </h3>
@@ -220,7 +222,7 @@ export default function BookingPage() {
             </div>
 
             {/* Contact Info */}
-            <div className="border border-[#FFF4C2] bg-[#FFF4C2]/30 p-6">
+            <div className="border border-[#FFF4C2] bg-[#FFF4C2]/30 p-6 reveal">
               <h3 className="font-accent text-xs tracking-[0.25em] uppercase text-[#B8860B] mb-5">
                 Direct Contact
               </h3>
@@ -259,17 +261,31 @@ export default function BookingPage() {
             </div>
 
             {/* Google Maps Embed */}
-            <div className="border border-[#FFF4C2] h-64 sm:h-80 w-full overflow-hidden">
-              <iframe
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                scrolling="no"
-                marginHeight="0"
-                marginWidth="0"
-                src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=GRX7+466,%20Porvorim,%20Goa%20403511&t=&z=15&ie=UTF8&iwloc=B&output=embed"
-                title="Google Map"
-              ></iframe>
+            <div className="relative group reveal border border-[#FFF4C2] overflow-hidden">
+              <div className="h-64 sm:h-80 w-full overflow-hidden">
+                <iframe
+                  width="100%"
+                  height="100%"
+                  frameBorder="0"
+                  scrolling="no"
+                  marginHeight="0"
+                  marginWidth="0"
+                  src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=GRX7+466,%20Porvorim,%20Goa%20403511&t=&z=15&ie=UTF8&iwloc=B&output=embed"
+                  title="Google Map"
+                  className="-mt-[50px] h-[calc(100%+50px)] w-full"
+                ></iframe>
+              </div>
+              <a
+                href="https://maps.app.goo.gl/FRHo8eqdSQhqmWKk7"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute bottom-4 right-4 bg-black border border-black px-4 py-2 text-xs font-body font-bold text-[#FFF4C2] shadow-lg hover:bg-[#D4A017] hover:text-white transition-all duration-300 flex items-center gap-2 z-10"
+              >
+                <svg width="14" height="14" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3" />
+                </svg>
+                Open in Maps
+              </a>
             </div>
           </div>
         </div>

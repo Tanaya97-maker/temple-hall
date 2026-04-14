@@ -77,9 +77,9 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white shadow-md py-2' : ' opacity-90 py-3'
           }`}
       >
-        <div className="max-w-7xl  sm:px-6 flex items-center justify-between">
+        <div className="max-w-7xl sm:px-6 flex items-center justify-end lg:justify-between">
           {/* Logo */}
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="hidden lg:flex items-center">
             <img src="/logo.webp" alt="Shantadurga Logo" className="h-16 w-auto object-contain" />
           </Link>
 
@@ -102,13 +102,13 @@ export default function Header() {
 
           {/* Mobile Hamburger */}
           <button
-            className="lg:hidden flex flex-col gap-[5px] p-2"
+            className="lg:hidden flex flex-col gap-[5px] p-2 mr-4"
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
           >
-            <span className="w-6 h-[2px] bg-black block" />
-            <span className="w-6 h-[2px] bg-black block" />
-            <span className="w-4 h-[2px] bg-black block" />
+            <span className={`w-4 h-[2px] block transition-colors duration-300 ${location.pathname === '/' && !scrolled ? 'bg-white' : 'bg-black'}`} />
+            <span className={`w-4 h-[2px] block transition-colors duration-300 ${location.pathname === '/' && !scrolled ? 'bg-white' : 'bg-black'}`} />
+            <span className={`w-4 h-[2px] block transition-colors duration-300 ${location.pathname === '/' && !scrolled ? 'bg-white' : 'bg-black'}`} />
           </button>
         </div>
       </header>
