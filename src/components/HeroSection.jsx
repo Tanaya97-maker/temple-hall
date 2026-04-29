@@ -24,7 +24,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative h-[100dvh] lg:min-h-screen flex items-center justify-center overflow-hidden bg-black"
+      className="relative h-[calc(100dvh-16px)] lg:h-screen lg:min-h-screen m-[8px] lg:m-0 flex items-center justify-center overflow-hidden bg-black"
     >
       {/* Background Images Carousel */}
       {backgroundImages.map((src, index) => (
@@ -41,9 +41,9 @@ export default function HeroSection() {
         </div>
       ))}
 
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto ">
+      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
         <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] mb-4 lg:mb-6">
-          Perfect Venue<br />for<br />
+          Perfect Venue for<br />
           <em className="not-italic text-[#D4A017]">Sacred & Grand Celebrations</em><br />
         </h1>
 

@@ -1,3 +1,5 @@
+
+//BOOKINGPAGE
 import { useState } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import useScrollReveal from '../hooks/useScrollReveal';
@@ -65,22 +67,61 @@ export default function BookingPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {(status === 'success' || status === 'error') && (
+            <div 
+              className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fade-in"
+              onClick={() => setStatus('idle')}
+            >
+              {status === 'success' ? (
+                <div 
+                  className="bg-[#FFF4C2] border border-[#D4A017] p-8 shadow-2xl rounded-lg w-full max-w-md text-center font-body text-black animate-scale-in"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="w-12 h-12 bg-[#D4A017] text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                      <path d="M5 13l4 4L19 7" />
+                    </svg>
+                  </div>
+                  <h4 className="font-accent text-lg font-bold mb-2 uppercase tracking-wide">Success!</h4>
+                  <p className="text-sm opacity-90 leading-relaxed">
+                    Your enquiry has been submitted. We will contact you shortly.
+                  </p>
+                  <button 
+                    onClick={() => setStatus('idle')}
+                    className="mt-6 px-6 py-2 bg-black text-[#FFF4C2] text-xs font-bold uppercase tracking-widest hover:bg-[#B8860B] transition-colors"
+                  >
+                    Close
+                  </button>
+                </div>
+              ) : (
+                <div 
+                  className="bg-white border border-red-200 p-8 shadow-2xl rounded-lg w-full max-w-md text-center font-body text-red-700 animate-scale-in"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="w-12 h-12 bg-red-500 text-white rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="3" viewBox="0 0 24 24">
+                      <path d="M18 6L6 18M6 6l12 12" />
+                    </svg>
+                  </div>
+                  <h4 className="font-accent text-lg font-bold mb-2 uppercase tracking-wide text-red-800">Oops!</h4>
+                  <p className="text-sm opacity-90 leading-relaxed">
+                    Something went wrong. Please call us directly or try again.
+                  </p>
+                  <button 
+                    onClick={() => setStatus('idle')}
+                    className="mt-6 px-6 py-2 bg-red-600 text-white text-xs font-bold uppercase tracking-widest hover:bg-red-700 transition-colors"
+                  >
+                    Try Again
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
           {/* Form */}
           <div className="bg-white border-2 border-[#FFF4C2] p-8 reveal">
             <h3 className="font-accent text-sm tracking-widest uppercase text-[#B8860B] mb-6">
               Enquiry / Booking Form
             </h3>
-
-            {status === 'success' && (
-              <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-[#FFF4C2] border border-[#D4A017] p-4 shadow-xl rounded w-[90%] max-w-md text-center font-body text-sm text-black animate-slide-in-right">
-                Your enquiry has been submitted. We will contact you shortly.
-              </div>
-            )}
-            {status === 'error' && (
-              <div className="fixed top-24 left-1/2 -translate-x-1/2 z-50 bg-red-50 border border-red-200 p-4 shadow-xl rounded w-[90%] max-w-md text-center font-body text-sm text-red-700 animate-slide-in-right">
-                Something went wrong. Please call us directly or try again.
-              </div>
-            )}
 
             <form onSubmit={handleSubmit} className="flex flex-col gap-5">
               {/* Name */}
@@ -262,7 +303,24 @@ export default function BookingPage() {
 
             {/* Google Maps Embed */}
             <div className="relative group reveal border border-[#FFF4C2] overflow-hidden">
-              <div className="h-64 sm:h-80 w-full overflow-hidden">
+              <div className="h-64 sm:h-80 w-full overflow-hidden relative bg-gray-50">
+                {/* Fallback / Loading State */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                  <div className="w-12 h-12 border-2 border-[#D4A017]/20 border-t-[#D4A017] rounded-full animate-spin mb-4"></div>
+                  <p className="font-body text-sm text-gray-500 mb-2">Loading Google Maps...</p>
+                  <p className="font-body text-xs text-gray-400 max-w-[250px]">
+                    If the map doesn't appear, you may have a slow connection.
+                  </p>
+                  <a 
+                    href="https://maps.app.goo.gl/FRHo8eqdSQhqmWKk7" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="mt-4 text-[#B8860B] font-semibold text-xs uppercase tracking-widest underline underline-offset-4"
+                  >
+                    View Direct Link
+                  </a>
+                </div>
+
                 <iframe
                   width="100%"
                   height="100%"
@@ -272,7 +330,11 @@ export default function BookingPage() {
                   marginWidth="0"
                   src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=GRX7+466,%20Porvorim,%20Goa%20403511&t=&z=15&ie=UTF8&iwloc=B&output=embed"
                   title="Google Map"
-                  className="-mt-[50px] h-[calc(100%+50px)] w-full"
+                  className="relative z-10 -mt-[50px] h-[calc(100%+50px)] w-full transition-opacity duration-500"
+                  onLoad={(e) => {
+                    e.target.style.opacity = '1';
+                  }}
+                  style={{ opacity: 0 }}
                 ></iframe>
               </div>
               <a

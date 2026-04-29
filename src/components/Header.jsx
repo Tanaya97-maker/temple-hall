@@ -1,3 +1,4 @@
+//HEADER
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -12,6 +13,17 @@ const navLinks = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [menuOpen]);
   const location = useLocation();
 
 
@@ -106,21 +118,24 @@ export default function Header() {
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
           >
-            <span className={`w-4 h-[2px] block transition-colors duration-300 ${location.pathname === '/' && !scrolled ? 'bg-white' : 'bg-black'}`} />
-            <span className={`w-4 h-[2px] block transition-colors duration-300 ${location.pathname === '/' && !scrolled ? 'bg-white' : 'bg-black'}`} />
-            <span className={`w-4 h-[2px] block transition-colors duration-300 ${location.pathname === '/' && !scrolled ? 'bg-white' : 'bg-black'}`} />
+            <span className={`w-6 h-[2px] block transition-colors duration-300 ${location.pathname === '/' && !scrolled ? 'bg-white' : 'bg-black'}`} />
+            <span className={`w-6 h-[2px] block transition-colors duration-300 ${location.pathname === '/' && !scrolled ? 'bg-white' : 'bg-black'}`} />
+            <span className={`w-6 h-[2px] block transition-colors duration-300 ${location.pathname === '/' && !scrolled ? 'bg-white' : 'bg-black'}`} />
           </button>
         </div>
       </header>
 
       {/* Mobile Sidebar */}
       {menuOpen && (
-        <div className="fixed inset-0 z-50 flex">
+        <div className="fixed inset-0 z-[60] overflow-hidden">
+          {/* Backdrop covering entire screen */}
           <div
-            className="flex-1 bg-black/40"
+            className="absolute inset-0 bg-black/60 backdrop-blur-[2px] animate-fade-in"
             onClick={() => setMenuOpen(false)}
           />
-          <div className="w-72 bg-white h-full shadow-2xl flex flex-col animate-slide-in-right">
+
+          {/* Sidebar drawer sliding on top */}
+          <div className="absolute right-0 top-0 w-72 bg-white h-full shadow-2xl flex flex-col animate-slide-in-right">
             <div className="flex items-center justify-between p-5 border-b border-[#FFF4C2]">
               <span className="font-accent text-sm font-bold tracking-widest uppercase">Menu</span>
               <button
