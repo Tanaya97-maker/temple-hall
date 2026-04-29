@@ -5,8 +5,7 @@ import SectionHeading from '../components/SectionHeading';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 // ---- Replace with your deployed Google Apps Script Web App URL ----
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyoO_-D5d4X-xodhYxRxFvZljMCDx_-KWXlLkSE2t9MwG_NENpRLnmRlpEaqLH9ANow/exec';
-
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby8_Z9W6pzUk4FlYfVE9_U3PgwFdvXnHfFHnD03SV_eV1WtxBScpm1C24qpfh8Vw317/exec';
 const eventTypes = [
   'Wedding',
   'Engagement',
@@ -68,12 +67,12 @@ export default function BookingPage() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {(status === 'success' || status === 'error') && (
-            <div 
+            <div
               className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/40 backdrop-blur-sm animate-fade-in"
               onClick={() => setStatus('idle')}
             >
               {status === 'success' ? (
-                <div 
+                <div
                   className="bg-[#FFF4C2] border border-[#D4A017] p-8 shadow-2xl rounded-lg w-full max-w-md text-center font-body text-black animate-scale-in"
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -86,7 +85,7 @@ export default function BookingPage() {
                   <p className="text-sm opacity-90 leading-relaxed">
                     Your enquiry has been submitted. We will contact you shortly.
                   </p>
-                  <button 
+                  <button
                     onClick={() => setStatus('idle')}
                     className="mt-6 px-6 py-2 bg-black text-[#FFF4C2] text-xs font-bold uppercase tracking-widest hover:bg-[#B8860B] transition-colors"
                   >
@@ -94,7 +93,7 @@ export default function BookingPage() {
                   </button>
                 </div>
               ) : (
-                <div 
+                <div
                   className="bg-white border border-red-200 p-8 shadow-2xl rounded-lg w-full max-w-md text-center font-body text-red-700 animate-scale-in"
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -107,7 +106,7 @@ export default function BookingPage() {
                   <p className="text-sm opacity-90 leading-relaxed">
                     Something went wrong. Please call us directly or try again.
                   </p>
-                  <button 
+                  <button
                     onClick={() => setStatus('idle')}
                     className="mt-6 px-6 py-2 bg-red-600 text-white text-xs font-bold uppercase tracking-widest hover:bg-red-700 transition-colors"
                   >
@@ -311,9 +310,9 @@ export default function BookingPage() {
                   <p className="font-body text-xs text-gray-400 max-w-[250px]">
                     If the map doesn't appear, you may have a slow connection.
                   </p>
-                  <a 
-                    href="https://maps.app.goo.gl/FRHo8eqdSQhqmWKk7" 
-                    target="_blank" 
+                  <a
+                    href="https://maps.app.goo.gl/FRHo8eqdSQhqmWKk7"
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 text-[#B8860B] font-semibold text-xs uppercase tracking-widest underline underline-offset-4"
                   >
