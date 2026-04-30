@@ -1,11 +1,11 @@
 
 //BOOKINGPAGE
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import SectionHeading from '../components/SectionHeading';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 // ---- Replace with your deployed Google Apps Script Web App URL ----
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby8_Z9W6pzUk4FlYfVE9_U3PgwFdvXnHfFHnD03SV_eV1WtxBScpm1C24qpfh8Vw317/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw_9kfNVR3ORgNpKb8YNAP0L2dRLehEngoJ81yPPYwl-UoWxEpsiZDEg96L9L-re74/exec';
 const eventTypes = [
   'Wedding',
   'Engagement',
@@ -28,9 +28,34 @@ export default function BookingPage() {
     message: '',
   });
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [bookedDates, setBookedDates] = useState([]);
+  const [loadingDates, setLoadingDates] = useState(true);
+
+  useEffect(() => {
+    const fetchDates = async () => {
+      try {
+        const res = await fetch(`${GOOGLE_SCRIPT_URL}?t=${Date.now()}`);
+        const data = await res.json();
+        if (Array.isArray(data)) {
+          setBookedDates(data);
+        }
+      } catch (err) {
+        console.error("Failed to fetch booked dates", err);
+      } finally {
+        setLoadingDates(false);
+      }
+    };
+    fetchDates();
+  }, []);
 
   const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    if (name === 'phone') {
+      const cleaned = value.replace(/\D/g, '').slice(0, 10);
+      setForm((prev) => ({ ...prev, [name]: cleaned }));
+    } else {
+      setForm((prev) => ({ ...prev, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -150,7 +175,9 @@ export default function BookingPage() {
                   required
                   value={form.phone}
                   onChange={handleChange}
-                  placeholder="+91 XXXXX XXXXX"
+                  placeholder="10-digit mobile number"
+                  pattern="\d{10}"
+                  maxLength={10}
                   className="w-full border border-gray-200 focus:border-[#D4A017] outline-none px-4 py-3 font-body text-sm text-black placeholder-gray-300 transition-colors bg-white"
                 />
               </div>
@@ -228,6 +255,35 @@ export default function BookingPage() {
                 {status === 'loading' ? 'Submitting...' : 'Submit Enquiry'}
               </button>
             </form>
+
+            {/* Booked Dates Section */}
+            <div className="mt-12 pt-8 border-t border-[#FFF4C2]">
+              <h4 className="font-accent text-xs tracking-widest uppercase text-[#B8860B] mb-4">
+                Already Booked Dates
+              </h4>
+              {loadingDates ? (
+                <div className="flex items-center gap-2 text-xs text-gray-400 font-body">
+                  <div className="w-3 h-3 border border-t-[#D4A017] rounded-full animate-spin"></div>
+                  Checking availability...
+                </div>
+              ) : bookedDates.length > 0 ? (
+                <div className="flex flex-wrap gap-2">
+                  {bookedDates.map((date, index) => (
+                    <span
+                      key={index}
+                      className="px-3 py-1 bg-red-50 text-red-700 text-[10px] font-bold border border-red-100 rounded-full"
+                    >
+                      {new Date(date).toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })}
+                    </span>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-xs text-gray-400 font-body">All dates are currently available.</p>
+              )}
+              <p className="mt-4 text-[10px] text-gray-400 italic">
+                * This list is updated in real-time.
+              </p>
+            </div>
           </div>
 
           {/* Right Panel: Pricing + Contact */}
