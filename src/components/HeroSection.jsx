@@ -51,18 +51,20 @@ export default function HeroSection() {
           <img src="/logo.webp" alt="Logo" className="h-32 lg:h-40 w-auto object-contain rounded-sm" />
         </div>
 
-        {/* Stats bar */}
-        <div className="mt-2 lg:mt-4 grid grid-cols-3 gap-4 max-w-lg mx-auto pt-4 lg:pt-8">
-          {[
-            { value: 'AC &', label: ' NON-AC Halls' },
-            { value: '3000', label: 'Guest Capacity' },
-            { value: '250+', label: 'Car Parking' },
-          ].map((stat) => (
-            <div key={stat.label} className="text-center border border-[#D4A017] bg-black/40 backdrop-blur-sm">
-              <div className="font-display text-2xl font-semibold text-[#FFF4C2]">{stat.value}</div>
-              <div className="font-display text-md font-bold text-gray-300 uppercase">{stat.label}</div>
-            </div>
-          ))}
+        {/* Navigation Buttons */}
+        <div className="mt-4 lg:mt-8 grid grid-cols-2 gap-4 max-w-lg mx-auto">
+          <Link
+            to="/booking"
+            className="text-center border border-[#D4A017] bg-black/40 backdrop-blur-sm py-4 hover:bg-[#D4A017]/20 transition-all duration-300"
+          >
+            <div className="font-display text-xl sm:text-2xl font-semibold text-[#FFF4C2] uppercase tracking-wider">Book Now</div>
+          </Link>
+          <Link
+            to="/gallery"
+            className="text-center border border-[#D4A017] bg-black/40 backdrop-blur-sm py-4 hover:bg-[#D4A017]/20 transition-all duration-300"
+          >
+            <div className="font-display text-xl sm:text-2xl font-semibold text-[#FFF4C2] uppercase tracking-wider">Gallery</div>
+          </Link>
         </div>
       </div>
     </section>

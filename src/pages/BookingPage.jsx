@@ -302,13 +302,18 @@ export default function BookingPage() {
                   </div>
                   <div className="font-display text-2xl font-semibold text-[#FFF4C2]">₹1,40,000</div>
                 </div>
-
                 <div className="flex items-start justify-between border-b border-white/10 pb-4">
                   <div>
                     <div className="font-body text-sm font-semibold text-white">Extra Hours</div>
                     <div className="font-body text-xs text-gray-400 mt-1">Per hour beyond 5 hrs</div>
                   </div>
                   <div className="font-display text-2xl font-semibold text-[#FFF4C2]">₹8,000</div>
+                </div>
+                <div className="flex items-start justify-between border-b border-white/10 pb-4">
+                  <div>
+                    <div className="font-body text-sm font-semibold text-white">Refundable Deposit</div>
+                  </div>
+                  <div className="font-display text-2xl font-semibold text-[#FFF4C2]">₹10,000</div>
                 </div>
               </div>
 

@@ -70,7 +70,7 @@ export default function ServicesSection() {
             <SectionHeading
               tag="Services & Amenities"
               title="Everything You Need, In One Place"
-              subtitle="World-class facilities to make your event comfortable, elegant, and effortless."
+              subtitle="Facilities to make your event comfortable, elegant, and effortless."
             />
           </div>
 
