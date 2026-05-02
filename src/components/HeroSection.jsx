@@ -52,18 +52,18 @@ export default function HeroSection() {
         </div>
 
         {/* Navigation Buttons */}
-        <div className="mt-4 lg:mt-8 grid grid-cols-2 gap-4 max-w-lg mx-auto">
+        <div className="mt-6 lg:mt-8 grid grid-cols-2 gap-4 max-w-lg mx-auto">
           <Link
             to="/booking"
-            className="text-center border border-[#D4A017] bg-black/40 backdrop-blur-sm py-4 hover:bg-[#D4A017]/20 transition-all duration-300"
+            className="text-center border border-[#D4A017] bg-black/40 backdrop-blur-sm py-2 hover:bg-[#D4A017]/20 transition-all duration-300"
           >
-            <div className="font-display text-xl sm:text-2xl font-semibold text-[#FFF4C2] uppercase tracking-wider">Book Now</div>
+            <div className="font-display text-lg sm:text-xl font-semibold text-[#FFF4C2] uppercase tracking-wider">Book Now</div>
           </Link>
           <Link
             to="/gallery"
-            className="text-center border border-[#D4A017] bg-black/40 backdrop-blur-sm py-4 hover:bg-[#D4A017]/20 transition-all duration-300"
+            className="text-center border border-[#D4A017] bg-black/40 backdrop-blur-sm py-2 hover:bg-[#D4A017]/20 transition-all duration-300"
           >
-            <div className="font-display text-xl sm:text-2xl font-semibold text-[#FFF4C2] uppercase tracking-wider">Gallery</div>
+            <div className="font-display text-lg sm:text-xl font-semibold text-[#FFF4C2] uppercase tracking-wider">Gallery</div>
           </Link>
         </div>
       </div>
