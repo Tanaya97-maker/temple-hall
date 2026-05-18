@@ -1,72 +1,49 @@
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useRef } from 'react';
 
-const backgroundImages = [
+const images = [
   '/img1/11.webp',
   '/img1/12.webp',
   '/img1/13.webp',
-  '/img1/14.webp',
-  '/img1/15.webp',
-  '/img1/36.webp',
 ];
 
 export default function HeroSection() {
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const containerRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end start"]
+  });
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.1]);
 
   return (
-    <section
-      id="home"
-      className="relative h-[calc(100dvh-16px)] lg:h-screen lg:min-h-screen m-[8px] lg:m-0 flex items-center justify-center overflow-hidden bg-black"
-    >
-      {/* Background Images Carousel */}
-      {backgroundImages.map((src, index) => (
-        <div
-          key={src}
-          className={`absolute inset-0 transition-all duration-1000 ease-in-out blur-[2px] ${index === currentImageIndex ? 'opacity-40 z-0' : 'opacity-0 z-0'
-            }`}
-        >
+    <section ref={containerRef} className="relative h-[33vh] md:h-[50vh] lg:h-[66vh] overflow-hidden bg-white/20 backdrop-blur-lg border-b border-white/20">
+      {/* Cinematic Banner with Rounded Edges */}
+      <motion.div
+        style={{ scale }}
+        className="relative w-full h-full overflow-hidden"
+      >
+        <motion.div style={{ y }} className="absolute inset-0">
           <img
-            src={src}
-            alt="Hero Background"
+            src="/img1/11.webp"
+            alt="Wedding Hall"
             className="w-full h-full object-cover"
           />
-        </div>
-      ))}
+          {/* Glassmorphism Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-white/5 to-black/70 " />
+        </motion.div>
 
-      <div className="relative z-10 text-center px-4 sm:px-6 max-w-5xl mx-auto">
-        <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-semibold text-white leading-[1.1] mb-4 lg:mb-6">
-          Perfect Venue for<br />
-          <em className="not-italic text-[#D4A017]">Sacred & Grand Celebrations</em><br />
-        </h1>
-
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <img src="/logo.webp" alt="Logo" className="h-32 lg:h-40 w-auto object-contain rounded-sm" />
-        </div>
-
-        {/* Navigation Buttons */}
-        <div className="mt-6 lg:mt-8 grid grid-cols-2 gap-4 max-w-lg mx-auto">
-          <Link
-            to="/booking"
-            className="text-center border border-[#D4A017] bg-black/40 backdrop-blur-sm py-2 hover:bg-[#D4A017]/20 transition-all duration-300"
-          >
-            <div className="font-display text-lg sm:text-xl font-semibold text-[#FFF4C2] uppercase tracking-wider">Book Now</div>
-          </Link>
-          <Link
-            to="/gallery"
-            className="text-center border border-[#D4A017] bg-black/40 backdrop-blur-sm py-2 hover:bg-[#D4A017]/20 transition-all duration-300"
-          >
-            <div className="font-display text-lg sm:text-xl font-semibold text-[#FFF4C2] uppercase tracking-wider">Gallery</div>
-          </Link>
-        </div>
-      </div>
+        {/* Scroll Indicator */}
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/50"
+        >
+          <div className="w-px h-8 md:h-12 bg-gradient-to-b from-gold to-transparent mx-auto" />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

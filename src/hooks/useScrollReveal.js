@@ -1,8 +1,5 @@
 import { useEffect } from 'react';
 
-/**
- * Hook to apply 'reveal-visible' class to elements with 'reveal' class when they enter the viewport.
- */
 export default function useScrollReveal() {
   useEffect(() => {
     const observerOptions = {

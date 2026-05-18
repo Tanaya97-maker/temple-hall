@@ -1,7 +1,8 @@
 import Header from './Header';
 import Footer from './Footer';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
+import { Home } from 'lucide-react';
 
 export default function Layout({ children }) {
   const { pathname } = useLocation();
@@ -11,7 +12,7 @@ export default function Layout({ children }) {
   }, [pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen relative">
       <Header />
       <div className="flex-1">{children}</div>
       <Footer />

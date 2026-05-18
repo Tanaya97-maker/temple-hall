@@ -1,8 +1,13 @@
-import SectionHeading from '../components/SectionHeading';
 import useScrollReveal from '../hooks/useScrollReveal';
 
-const placeholders = Array.from({ length: 27 }, (_, i) => ({
-  id: i + 1,
+const availableImageIds = [
+  11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+  21, 22, 23, 24, 26, 27, 28, 30, 31, 32,
+  33, 34, 35, 36, 37
+];
+
+const placeholders = availableImageIds.map((imgId, i) => ({
+  id: imgId,
   aspect: [
     'aspect-square',
     'aspect-[4/3]',
@@ -17,17 +22,14 @@ export default function GalleryPage() {
   useScrollReveal();
 
   return (
-    <main className="pt-24 pb-20 min-h-screen bg-white">
+    <main className="pt-16 pb-5 min-h-screen ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="py-12">
-          <SectionHeading
-            tag="Gallery"
-            title="A Glimpse of Our Hall"
-            subtitle="Moments captured within our sacred and elegant spaces."
-          />
+        <div className="text-center py-4">
+          <span className="text-gold font-body text-xs tracking-[0.3em] uppercase block mb-1">Gallery</span>
+          <h1 className="text-dark font-heading text-3xl md:text-5xl font-semibold tracking-wide">A Glimpse of Our Hall</h1>
         </div>
         {/* Masonry-style Grid */}
-        <div className="columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-4 space-y-4">
+        <div className="columns-2 sm:columns-3 lg:columns-3 xl:columns-4 gap-2 space-y-2">
           {placeholders.map((item) => (
             <div
               key={item.id}
@@ -36,7 +38,7 @@ export default function GalleryPage() {
               <div className={`${item.aspect} w-full flex items-center justify-center bg-[#FFF4C2] relative`}>
                 {/* Real Image */}
                 <img
-                  src={`/img1/${10 + item.id}.webp`}
+                  src={`/img1/${item.id}.webp`}
                   alt="image"
                   loading="lazy"
                   className="w-full h-full object-cover"

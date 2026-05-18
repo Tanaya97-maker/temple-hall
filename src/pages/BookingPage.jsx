@@ -1,7 +1,6 @@
 
 //BOOKINGPAGE
 import { useState, useEffect } from 'react';
-import SectionHeading from '../components/SectionHeading';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 // ---- Replace with your deployed Google Apps Script Web App URL ----
@@ -80,14 +79,11 @@ export default function BookingPage() {
   };
 
   return (
-    <main className="pt-24 pb-20 min-h-screen bg-white">
+    <main className="pt-16 pb-12 min-h-screen bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="py-12">
-          <SectionHeading
-            tag="Booking & Support"
-            title="Reserve Your Date"
-            subtitle="Fill out the form below and our team will get back to you within 24 hours."
-          />
+        <div className="text-center py-6">
+          <span className="text-gold font-body text-xs tracking-[0.3em] uppercase block mb-1">Booking & Support</span>
+          <h1 className="text-dark font-heading text-3xl md:text-5xl font-semibold tracking-wide">Reserve Your Date</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
