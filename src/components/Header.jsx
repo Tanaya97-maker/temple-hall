@@ -16,6 +16,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const [activeSection, setActiveSection] = useState(location.pathname);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -25,6 +26,33 @@ export default function Header() {
 
   useEffect(() => {
     setMobileMenuOpen(false);
+    setActiveSection(location.pathname);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    const isCombinedPage = ['/about', '/services', '/amenities'].includes(location.pathname);
+    if (!isCombinedPage) return;
+
+    const handleScrollSpy = () => {
+      const sections = ['about', 'services', 'amenities'];
+      const scrollPosition = window.scrollY + 200; // Offset for header height
+
+      for (const section of sections) {
+        const el = document.getElementById(section);
+        if (el) {
+          const top = el.offsetTop;
+          const height = el.offsetHeight;
+          if (scrollPosition >= top && scrollPosition < top + height) {
+            setActiveSection(`/${section}`);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScrollSpy);
+    handleScrollSpy();
+    return () => window.removeEventListener('scroll', handleScrollSpy);
   }, [location.pathname]);
 
   return (
@@ -49,12 +77,12 @@ export default function Header() {
                 <Link
                   key={link.label}
                   to={link.to}
-                  className={`relative px-5 py-2 text-sm font-body font-medium transition-all duration-300 rounded-full ${location.pathname === link.to
+                  className={`relative px-5 py-2 text-sm font-body font-medium transition-all duration-300 rounded-full ${activeSection === link.to
                     ? 'text-white'
                     : 'text-dark hover:text-gold'
                     }`}
                 >
-                  {location.pathname === link.to && (
+                  {activeSection === link.to && (
                     <motion.div
                       layoutId="nav-active"
                       className="absolute inset-0 bg-gold rounded-full -z-10 shadow-lg shadow-gold/30"
@@ -82,12 +110,12 @@ export default function Header() {
                 <Link
                   key={link.label}
                   to={link.to}
-                  className={`flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border shadow-md ${location.pathname === link.to
+                  className={`flex-shrink-0 flex items-center gap-2 px-4 py-2.5 rounded-full border shadow-md ${activeSection === link.to
                     ? 'bg-gold border-gold text-white shadow-gold/30'
                     : 'bg-white border-gold/20 text-dark'
                     }`}
                 >
-                  <link.icon size={16} strokeWidth={2} className={location.pathname === link.to ? 'text-white' : 'text-gold'} />
+                  <link.icon size={16} strokeWidth={2} className={activeSection === link.to ? 'text-white' : 'text-gold'} />
                   <span className="font-heading text-xs font-semibold tracking-wide uppercase">{link.label}</span>
                 </Link>
               ))}
