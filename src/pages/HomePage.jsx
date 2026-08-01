@@ -148,7 +148,7 @@ export default function HomePage() {
   }, [location.pathname]);
 
   return (
-    <main className="bg-cream min-h-screen sm:pt-1 md:pt-5 lg:pt-8 overflow-hidden">
+    <main className="bg-cream min-h-screen overflow-hidden">
       {/* Hero Section */}
       <HeroSection />
 

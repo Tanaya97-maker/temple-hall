@@ -64,16 +64,16 @@ export default function Header() {
   return (
     <>
       <header className="fixed top-0 left-0 right-0 z-50 py-2 bg-cream/95 backdrop-blur-md shadow-md border-b border-gold/10">
-        <div className="px-8 mx-auto flex items-center justify-between w-full relative">
+        <div className="px-2 mx-auto flex items-center justify-between w-full relative">
 
           {/* Brand Logo (Left) */}
           <Link to="/" className="flex items-center gap-2.5 z-50">
             <img src="/logo1.webp" alt="Temple Hall Logo" className="h-9 sm:h-11 w-auto object-contain rounded-lg" />
             <div className='flex flex-col leading-none'>
-              <span className="font-heading text-sm sm:text-md lg:text-xl font-semibold text-dark">
+              <span className="font-heading text-sm md:text-md lg:text-xl font-semibold text-dark">
                 SHRI SHANTADURGA
               </span>
-              <span className="font-heading text-sm sm:text-md lg:text-xl font-semibold text-dark">
+              <span className="font-heading text-sm md:text-md lg:text-xl font-semibold text-dark">
                 SANGODKARIN SABHAGRUHA
               </span>
             </div>
@@ -118,7 +118,7 @@ export default function Header() {
           {/* Mobile Hamburger Button - Visible on all pages */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden absolute right-6 top-1/2 -translate-y-1/2 z-[60] p-1.5 rounded-full border transition-all duration-300 text-black border-gold bg-gold/20"
+            className="lg:hidden absolute right-2 top-1/2 -translate-y-1/2 z-[60] p-1.5 rounded-full border transition-all duration-300 text-black border-gold bg-gold/20"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={20} strokeWidth={2.5} /> : <Ellipsis size={20} strokeWidth={2.5} />}

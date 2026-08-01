@@ -16,7 +16,7 @@ export default function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen relative">
       <Header />
-      <div className="flex-1">{children}</div>
+      <div className="flex-1 mt-14">{children}</div>
       <Footer />
     </div>
   );
