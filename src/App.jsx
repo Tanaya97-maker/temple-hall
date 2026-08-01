@@ -3,9 +3,6 @@ import { lazy, Suspense } from 'react';
 import Layout from './components/Layout';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
-const AboutPage = lazy(() => import('./pages/AboutPage'));
-const ServicesPage = lazy(() => import('./pages/ServicesPage'));
-const AmenitiesPage = lazy(() => import('./pages/AmenitiesPage'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const BookingPage = lazy(() => import('./pages/BookingPage'));
 
@@ -20,9 +17,9 @@ export default function App() {
         }>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/services" element={<AboutPage />} />
-            <Route path="/amenities" element={<AboutPage />} />
+            <Route path="/about" element={<HomePage />} />
+            <Route path="/services" element={<HomePage />} />
+            <Route path="/amenities" element={<HomePage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/booking" element={<BookingPage />} />
           </Routes>

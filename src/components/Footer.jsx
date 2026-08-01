@@ -21,7 +21,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-col items-start md:items-start gap-2 md:gap-6">
               <Link to="/" className="inline-block shrink-0">
                 <div className="bg-white rounded-xl p-1 md:p-1.5 w-24 h-20 md:w-48 md:h-28 flex items-center justify-center">
-                  <img src="/logo.webp" alt="Logo" className="max-w-full max-h-full object-contain" />
+                  <img src="/logo1.webp" alt="Logo" className="max-w-full max-h-full object-contain" />
                 </div>
               </Link>
               <p className="text-cream/80 font-heading text-sm md:text-xl italic leading-tight md:leading-relaxed">

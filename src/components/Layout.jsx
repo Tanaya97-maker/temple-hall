@@ -1,14 +1,16 @@
 import Header from './Header';
 import Footer from './Footer';
 import { useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
-import { Home } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
 
 export default function Layout({ children }) {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const sectionRoutes = ['/about', '/services', '/amenities'];
+    if (!sectionRoutes.includes(pathname)) {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+    }
   }, [pathname]);
 
   return (

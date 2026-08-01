@@ -18,7 +18,12 @@
     overflow-x: hidden;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: theme('fontFamily.heading');
   }
 }
@@ -30,7 +35,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   }
-  
+
   .glass-gold {
     background: rgba(255, 255, 255, 0.04);
     backdrop-filter: blur(10px);
@@ -52,10 +57,6 @@
     opacity: 0.05;
     pointer-events: none;
     z-index: 0;
-  }
-
-  button, .btn {
-    border: 1px solid theme('colors.gold.DEFAULT') !important;
   }
 
   .card-luxury {
@@ -92,4 +93,16 @@
 .reveal.reveal-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(.9);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
