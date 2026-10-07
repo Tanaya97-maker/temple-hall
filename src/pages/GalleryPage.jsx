@@ -18,7 +18,7 @@ const images = [
   { id: '22', ext: 'webp' },
   { id: '23', ext: 'webp' },
   { id: '24', ext: 'webp' },
-  { id: '25', ext: 'png' },
+  { id: '25', ext: 'jpg' },
   { id: '26', ext: 'webp' },
   { id: '27', ext: 'webp' },
   { id: '28', ext: 'webp' },

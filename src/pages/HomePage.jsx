@@ -65,20 +65,11 @@ const categories = [
     name: 'Convenience',
     amenities: [
       { name: 'Parking', icon: Car, description: '(250Cars)' },
-      { name: 'Generator', icon: Zap, description: '(250KV Backup)' },
-      { name: 'Buffet hall', icon: ChefHat, description: '(250 Seating + Kitchen)' },
-      { name: 'Security', icon: ShieldCheck, description: '(24/7 Security)' },
+      { name: 'Generator', icon: Zap, description: '(500kVA Backup)' },
+      { name: 'Buffet hall', icon: ChefHat, description: '(500 Seating + Kitchen)' },
+      { name: 'Security', icon: ShieldCheck },
     ]
-  },
-  {
-    name: 'Celebration',
-    amenities: [
-      { name: 'Catering', icon: Utensils, description: '' },
-      { name: 'Sound System', icon: Volume2, description: '' },
-      { name: 'Lighting', icon: Lightbulb, description: '' },
-      { name: 'Decoration', icon: Flower2, description: '' },
-    ]
-  },
+  }
 ];
 
 const containerVariants = {

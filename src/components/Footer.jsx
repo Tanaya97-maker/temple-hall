@@ -21,7 +21,7 @@ export default function Footer() {
             <div className="flex flex-col md:flex-col items-start md:items-start gap-2 md:gap-6">
               <Link to="/" className="inline-block shrink-0">
                 <div className="bg-white rounded-xl p-1 md:p-1.5 w-24 h-20 md:w-48 md:h-28 flex items-center justify-center">
-                  <img src="/logo1.webp" alt="Logo" className="max-w-full max-h-full object-contain" />
+                  <img src="/logo1.jpg" alt="Logo" className="max-w-full max-h-full object-contain" />
                 </div>
               </Link>
               <p className="text-cream/80 font-heading text-sm md:text-xl italic leading-tight md:leading-relaxed">
@@ -62,13 +62,13 @@ export default function Footer() {
                   <p className="text-[9px] sm:text-[10px] md:text-base text-cream/90 font-body">+91 98221 55422</p>
                 </div>
               </a>
-              <a href="mailto:rajeshsangodkar12@gmail.com" className="flex flex-row items-center md:items-start gap-2 md:gap-4 group w-full">
+              <a href="mailto:shreeishantadurgasangodkarin2@gmail.com" className="flex flex-row items-center md:items-start gap-2 md:gap-4 group w-full">
                 <div className="bg-gold/10 p-1.5 md:p-3 rounded-lg group-hover:bg-gold transition-colors shrink-0">
                   <Mail size={14} className="text-gold group-hover:text-dark md:w-4 md:h-4" />
                 </div>
                 <div className="text-left break-all">
                   <p className="text-[9px] sm:text-[10px] md:text-base text-xs text-cream/40 uppercase tracking-widest mb-1">Email Us</p>
-                  <p className="text-[9px] sm:text-[10px] md:text-base text-cream/90 font-body">rajeshsangodkar12@gmail.com</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-base text-cream/90 font-body">shreeshantadurgasangodkarin2@gmail.com</p>
                 </div>
               </a>
               {/* Location */}
@@ -78,7 +78,7 @@ export default function Footer() {
                 </div>
                 <div className="text-left">
                   <p className="text-[9px] sm:text-[10px] md:text-base text-xs text-cream/40 uppercase tracking-widest mb-1">Location</p>
-                  <p className="text-[9px] sm:text-[10px] md:text-base text-cream/90 font-body leading-tight md:leading-relaxed">Sangolda, North Goa,<br className="hidden md:block" />Goa, India - 403501</p>
+                  <p className="text-[9px] sm:text-[10px] md:text-base text-cream/90 font-body leading-tight md:leading-relaxed">Sangolda, Porvorim, North Goa, Goa, India - 403511</p>
                 </div>
               </a>
             </div>

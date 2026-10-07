@@ -48,6 +48,6 @@ npm run build
 This builds your React app in the `dist` directory which can then be deployed to modern hosting platforms (Vercel, Netlify, Github-Pages, etc.).
 
 ## Contact Information
-- **Manager:** +91 98221 55422
-- **Email:** rajeshsangodkar12@gmail.com
-- **Address:** Sangolda, North Goa, Goa, India - 403501 (GRX7 466, Porvorim)
+- **Contact:** +91 98221 55422
+- **Email:** shreeshantadurgasangodkarin2@gmail.com
+- **Address:** Sangolda, Porvorim, North Goa, Goa, India - 403511

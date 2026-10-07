@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import useScrollReveal from '../hooks/useScrollReveal';
 
 // ---- Replace with your deployed Google Apps Script Web App URL ----
-const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbw_9kfNVR3ORgNpKb8YNAP0L2dRLehEngoJ81yPPYwl-UoWxEpsiZDEg96L9L-re74/exec';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxvjKvu1MVHmx3S_1X3zdfyJd6G9o0wx5Yn9r-C3xR82eLAZK8eZlGE1XP_1RDxb6mh-g/exec';
 const eventTypes = [
   'Wedding',
   'Engagement',
@@ -296,14 +296,14 @@ export default function BookingPage() {
                     <div className="font-body text-sm font-semibold text-white">Base Package</div>
                     <div className="font-body text-xs text-gray-400 mt-1">Both halls(AC & Non AC) · 5 hours</div>
                   </div>
-                  <div className="font-display text-2xl font-semibold text-[#FFF4C2]">₹1,40,000</div>
+                  <div className="font-display text-2xl font-semibold text-[#FFF4C2]">₹1,60,000</div>
                 </div>
                 <div className="flex items-start justify-between border-b border-white/10 pb-4">
                   <div>
                     <div className="font-body text-sm font-semibold text-white">Extra Hours</div>
                     <div className="font-body text-xs text-gray-400 mt-1">Per hour beyond 5 hrs</div>
                   </div>
-                  <div className="font-display text-2xl font-semibold text-[#FFF4C2]">₹8,000</div>
+                  <div className="font-display text-2xl font-semibold text-[#FFF4C2]">₹11,000</div>
                 </div>
                 <div className="flex items-start justify-between border-b border-white/10 pb-4">
                   <div>
@@ -334,13 +334,13 @@ export default function BookingPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-body text-xs text-gray-500 uppercase tracking-wider">Manager</div>
+                    <div className="font-body text-xs text-gray-500 uppercase tracking-wider">Contact</div>
                     <div className="font-body text-sm font-semibold text-black">+91 98221 55422</div>
                   </div>
                 </a>
 
                 <a
-                  href="mailto:rajeshsangodkar12@gmail.com"
+                  href="mailto:shreeshantadurgasangodkarin2@gmail.com"
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-10 h-10 bg-black text-[#FFF4C2] rounded-full flex items-center justify-center group-hover:bg-[#D4A017] transition-colors">
@@ -351,7 +351,7 @@ export default function BookingPage() {
                   </div>
                   <div>
                     <div className="font-body text-xs text-gray-500 uppercase tracking-wider">Email</div>
-                    <div className="font-body text-sm font-semibold text-black break-all">rajeshsangodkar12@gmail.com</div>
+                    <div className="font-body text-sm font-semibold text-black break-all">shreeshantadurgasangodkarin2@gmail.com</div>
                   </div>
                 </a>
               </div>

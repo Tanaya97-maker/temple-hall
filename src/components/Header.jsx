@@ -68,10 +68,10 @@ export default function Header() {
 
           {/* Brand Logo (Left) */}
           <Link to="/" className="flex items-center gap-2.5 z-50">
-            <img src="/logo1.webp" alt="Temple Hall Logo" className="h-9 sm:h-11 w-auto object-contain rounded-lg" />
+            <img src="/logo1.jpg" alt="Temple Hall Logo" className="h-9 sm:h-11 w-auto object-contain rounded-lg" />
             <div className='flex flex-col leading-none'>
               <span className="font-heading text-sm md:text-md lg:text-xl font-semibold text-dark">
-                SHRI SHANTADURGA
+                SHREE SHANTADURGA
               </span>
               <span className="font-heading text-sm md:text-md lg:text-xl font-semibold text-dark">
                 SANGODKARIN SABHAGRUHA
