@@ -1,5 +1,5 @@
 # robots.txt for Shree Shantadurga Sangodkarin Sabhagruha
-# Website: https://shreeshantadurgasabhagruha.com
+# Website: https://www.shrishantadurgasangodkarin.com
 
 User-agent: *
 Allow: /
@@ -45,5 +45,5 @@ User-agent: Amazonbot
 Allow: /
 
 # Host & Sitemap
-Host: https://shreeshantadurgasabhagruha.com
+Host: https://www.shrishantadurgasangodkarin.com
 Sitemap: https://www.shrishantadurgasangodkarin.com/sitemap.xml

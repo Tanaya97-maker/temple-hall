@@ -2,11 +2,10 @@ import { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
-import BookingPage from './BookingPage';
 import {
   HandPlatter, Image, CalendarDays, Sparkles, School,
   Wind, Leaf, Users, Car, Zap, ChefHat, ShieldCheck,
-  Utensils, Volume2, Lightbulb, Flower2
+  MapPin, Navigation, Clock, Phone, ArrowRight
 } from 'lucide-react';
 
 const navItems = [

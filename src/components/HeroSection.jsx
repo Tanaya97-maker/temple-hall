@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { MapPin } from 'lucide-react';
 
 const images = [
   '/img1/35.webp',
@@ -61,13 +62,13 @@ export default function HeroSection() {
       {/* MOBILE VIEW (< 768px): Carousel on top, Black Strip below   */}
       {/* ============================================================ */}
       <div className="flex flex-col w-full md:hidden">
-        {/* 1. Image Carousel (Styled like Desktop Carousel) */}
+        {/* 1. Image Carousel */}
         <div className="relative w-full h-[280px] sm:h-[340px] overflow-hidden bg-dark">
           <AnimatePresence initial={false} custom={direction}>
             <motion.img
               key={currentIndex}
               src={images[currentIndex]}
-              alt={`Slide ${currentIndex + 1}`}
+              alt={`Shree Shantadurga Sangodkarin Sabhagruha Sangolda Goa Slide ${currentIndex + 1}`}
               custom={direction}
               variants={slideVariants}
               initial="enter"
@@ -117,9 +118,17 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="max-w-md mx-auto flex flex-col items-center"
           >
+            <div className="flex items-center gap-1.5 text-gold text-[10px] font-body uppercase tracking-[0.2em] font-semibold mb-1.5">
+              <MapPin size={12} /> Sangolda, Porvorim, North Goa
+            </div>
+
             <h1 className="text-white font-heading font-bold leading-tight text-2xl sm:text-3xl">
               A Space for <span className="text-gold">Every Occasion</span>
             </h1>
+
+            <p className="text-cream/70 text-xs font-body mt-1">
+              Shree Shantadurga Sangodkarin Sabhagruha
+            </p>
 
             <div className="w-16 h-[2px] bg-gold my-3.5" />
 
@@ -160,13 +169,21 @@ export default function HeroSection() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
+              <div className="flex items-center gap-2 text-gold text-xs font-body uppercase tracking-[0.25em] font-semibold mb-3">
+                <MapPin size={14} /> Sangolda, Porvorim, Goa
+              </div>
+
               <h1 className="text-white font-heading font-bold leading-tight text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
                 A Space for
                 <br />
                 <span className="text-gold">Every Occasion</span>
               </h1>
 
-              <div className="w-16 md:w-20 lg:w-24 h-[2px] bg-gold my-4 md:my-6 lg:my-8" />
+              <p className="text-cream/70 text-xs md:text-sm font-body mt-2">
+                Shree Shantadurga Sangodkarin Sabhagruha
+              </p>
+
+              <div className="w-16 md:w-20 lg:w-24 h-[2px] bg-gold my-4 md:my-5" />
 
               <div className="flex flex-wrap gap-3 lg:gap-4">
                 <Link to="/booking">
@@ -201,7 +218,7 @@ export default function HeroSection() {
                 <motion.img
                   key={currentIndex}
                   src={images[currentIndex]}
-                  alt={`Slide ${currentIndex + 1}`}
+                  alt={`Shree Shantadurga Sangodkarin Sabhagruha Sangolda Goa Slide ${currentIndex + 1}`}
                   custom={direction}
                   variants={slideVariants}
                   initial="enter"
