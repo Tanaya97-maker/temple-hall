@@ -35,7 +35,7 @@ const services = [
   },
   {
     title: 'Religious Events',
-    description: 'Our hall is designed with temple-inspired aesthetics, making it the ideal venue for sacred ceremonies and spiritual gatherings.',
+    description: 'Our hall is designed with temple-inspired aesthetics, making it the ideal venue for ceremonies and spiritual gatherings.',
     image: '/img1/21.webp',
   },
   {
@@ -270,9 +270,9 @@ export default function HomePage() {
                 transition={{ duration: 0.8 }}
                 className="flex-1 space-y-4"
               >
-                <h3 className="text-gold font-heading text-xl md:text-2xl font-semibold">Pure Vegetarian & Custom Flexibility</h3>
+                <h3 className="text-gold font-heading text-xl md:text-2xl font-semibold">Vegetarian & Custom Flexibility</h3>
                 <p className="text-gray-600 font-body leading-relaxed text-base md:text-lg">
-                  With both AC and non-AC hall options, we offer the flexibility to choose what best suits your comfort and budget. Our strictly vegetarian environment ensures a sattvic, temple-aligned experience for you and your guests, thoughtfully preserving the sanctity and sacred atmosphere that every special occasion deserves. Your traditions are respected here, in every detail, creating a pure and positive environment that elevates the spiritual essence of your celebrations while keeping everyone thoroughly comfortable.
+                  With both AC and non-AC hall options, we offer the flexibility to choose what best suits your comfort and budget. Our strictly vegetarian environment ensures a sattvic, temple-aligned experience for you and your guests, thoughtfully preserving the sanctity and atmosphere that every special occasion deserves. Your traditions are respected here, in every detail, creating a pure and positive environment that elevates the spiritual essence of your celebrations while keeping everyone thoroughly comfortable.
                 </p>
               </motion.div>
               <motion.div

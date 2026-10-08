@@ -1,7 +1,7 @@
 
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Home, School, HandPlatter, Sparkles, ImageIcon, CalendarDays, X, Ellipsis } from "lucide-react";
+import { Home, School, HandPlatter, Sparkles, ImageIcon, CalendarDays, HelpCircle, X, Ellipsis } from "lucide-react";
 import { useState, useEffect, useRef } from "react";
 
 const navLinks = [
@@ -10,6 +10,7 @@ const navLinks = [
   { label: 'Services', to: '/services', icon: HandPlatter },
   { label: 'Amenities', to: '/amenities', icon: Sparkles },
   { label: 'Gallery', to: '/gallery', icon: ImageIcon },
+  { label: 'FAQ', to: '/faq', icon: HelpCircle },
 ];
 
 export default function Header() {

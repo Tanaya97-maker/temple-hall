@@ -1,0 +1,49 @@
+# robots.txt for Shree Shantadurga Sangodkarin Sabhagruha
+# Website: https://shreeshantadurgasabhagruha.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /*?*
+
+# Search Engine Crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# AI Search & Answer Engine Crawlers (AEO Optimization)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# Host & Sitemap
+Host: https://shreeshantadurgasabhagruha.com
+Sitemap: https://shreeshantadurgasabhagruha.com/sitemap.xml

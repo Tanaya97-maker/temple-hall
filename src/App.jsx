@@ -5,6 +5,10 @@ import Layout from './components/Layout';
 const HomePage = lazy(() => import('./pages/HomePage'));
 const GalleryPage = lazy(() => import('./pages/GalleryPage'));
 const BookingPage = lazy(() => import('./pages/BookingPage'));
+const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
+const TermsPage = lazy(() => import('./pages/TermsPage'));
+const FaqPage = lazy(() => import('./pages/FaqPage'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 export default function App() {
   return (
@@ -22,6 +26,10 @@ export default function App() {
             <Route path="/amenities" element={<HomePage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/booking" element={<BookingPage />} />
+            <Route path="/privacy" element={<PrivacyPolicyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/faq" element={<FaqPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </Suspense>
       </Layout>
