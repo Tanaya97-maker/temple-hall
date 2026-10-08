@@ -46,4 +46,4 @@ Allow: /
 
 # Host & Sitemap
 Host: https://shreeshantadurgasabhagruha.com
-Sitemap: https://shreeshantadurgasabhagruha.com/sitemap.xml
+Sitemap: https://www.shrishantadurgasangodkarin.com/sitemap.xml
